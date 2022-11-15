@@ -31,8 +31,8 @@ def drop_char(df,col): # drop the row where strings in a column cant be converte
     dff = df.copy()
     col_lst = dff[col].tolist() # extract the column to be a list
     index_lst = []  # index_l to store the index which should be droped
-    for i in range(len(col_lst)):                  
-        if pd.notna(col_lst[i]): 
+    for i in range(len(col_lst)):  
+        #if pd.notna(col_lst[i]) == True: 
             str_ = col_lst[i]
             try:
                 int(str_)
@@ -54,7 +54,7 @@ def drop_char_float(df,col): # drop the row where strings in a column cant be co
     col_lst = dff[col].tolist() # extract the column to be a list
     index_lst = []  # index_l to store the index which should be droped
     for i in range(len(col_lst)):                  
-        if pd.notna(col_lst[i]): 
+        #if pd.notna(col_lst[i]): 
             str_ = col_lst[i]
             try:
                 float(str_)

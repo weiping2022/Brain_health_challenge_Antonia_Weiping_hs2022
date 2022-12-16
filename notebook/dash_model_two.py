@@ -32,7 +32,7 @@ from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import cross_validate
 
 
-# In[3]:
+# In[1]:
 
 
 ## models(df,drop_lst,target)
@@ -220,18 +220,17 @@ def cv_models(df,drop_lst,target,k):
         print('    - Logistic regression')
         for i in range(len(C_lst)):
             print('       - C = {}'.format(C_lst[i]))
-            logreg = LogisticRegression(C=C_lst[i],solver='lbfgs',multi_class='auto',penalty='l2',max_iter=10000).fit(X,y)
+            logreg = LogisticRegression(C=C_lst[i],solver='lbfgs',multi_class='auto',penalty='l2',max_iter=10000)
             print('          - lbfgs_L2, average weighted f1-score of {}-cross validation:{:.3f}'.format(k,cross_val_score(logreg, X, y, cv = k,scoring='f1_weighted').mean()))
-            logreg = LogisticRegression(C=C_lst[i],solver='saga',multi_class='auto',penalty='l1',max_iter=10000).fit(X,y)
+            logreg = LogisticRegression(C=C_lst[i],solver='saga',multi_class='auto',penalty='l1',max_iter=10000)
             print('          - saga_L1, average weighted f1-score of {}-cross validation:{:.3f}'.format(k,cross_val_score(logreg, X, y, cv = k,scoring='f1_weighted').mean()))
-            logreg = LogisticRegression(C=C_lst[i],solver='newton-cg',multi_class='auto',penalty='l2',max_iter=10000).fit(X,y)
+            logreg = LogisticRegression(C=C_lst[i],solver='newton-cg',multi_class='auto',penalty='l2',max_iter=10000)
             print('          - newton-cg_L2, average weighted f1-score of {}-cross validation:{:.3f}'.format(k,cross_val_score(logreg, X, y, cv = k,scoring='f1_weighted').mean()))
 
         # decision tree
         print('    - Decision tree')
         for i in range(1,15):
             dtree = DecisionTreeClassifier(random_state=0,max_depth=i,criterion='gini')
-            dtree.fit(X,y)
             print('          - tree depth: {:.3f}. average weighted f1-score of {}-cross validation:{:.3f}'
                 .format(i,k,cross_val_score(dtree, X, y, cv = k,scoring='f1_weighted').mean()))
 
@@ -240,15 +239,13 @@ def cv_models(df,drop_lst,target,k):
         for i in range(1,20):   
             m= 5*i
             forest = RandomForestClassifier(n_estimators=m,random_state=5862)
-            forest.fit(X,y)
             print('          - {}trees. average weighted f1-score of {}-cross validation:{:.3f}'
                 .format(m,k,cross_val_score(forest, X, y, cv = k,scoring='f1_weighted').mean()))
         # MLP 
         print('    - MLP')
         hls = [[50,50],[20,20]] # hidden layer size  ,[100,100]
         for i in range(len(hls)):
-            mlp = MLPClassifier(solver='lbfgs',random_state=460,hidden_layer_sizes = hls[i],max_iter=20000).fit(X,y)
-            mlp.fit(X,y)
+            mlp = MLPClassifier(solver='lbfgs',random_state=460,hidden_layer_sizes = hls[i],max_iter=20000)
             print('          - hidden layer size{}. average weighted f1-score of {}-cross validation:{:.3f}'.format(hls[i],k,cross_val_score(mlp, X, y, cv = k,scoring='f1_weighted').mean()))          
 
 

@@ -1,5 +1,6 @@
-#!/usr/bin/env python
+#!/Weiping/bin/env python
 # coding: utf-8
+# five functions: usampling_split_scale_data(),models(), usampling_scale_data(),cv_models(), feature_importance()  
 
 # In[1]:
 

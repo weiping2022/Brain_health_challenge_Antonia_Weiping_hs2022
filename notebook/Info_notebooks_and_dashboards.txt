@@ -16,8 +16,8 @@ Notebooks:
     
         notebook name: 4_model_relatv_brain_volume_vs_DX_conversion_final.ipynb
         
-    5: visualize the feature importance for Antonia's model
-        notebook name: 5_model_feature_importance_for_antonia.ipynb
+    5: Machine Learning using sleep and brainvolume (as well as some other models not used for the paper)
+        notebook name: 5_ML_Sleep_and_brainvolume.py
     
     
     

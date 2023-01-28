@@ -14,7 +14,8 @@ Notebooks:
 		- 5_ML_Sleep_and_brainvolume.py 
     F: visualization and statistics analysis
         	- 6_Visualisations_and_Statistics.py
-    G: folder 'playground' includes many different visualization and modeling tries which are not included in the final work:
+
+    G: folder 'playground' includes many different visualization and machine learning modeling tries which are not included in the final work:
 		- brain volumes and biomarkers --> insomnia (classification algorithms)
 		- brain volumes and biomarkers --> ventricles (linear regression)
 		- KMeans clustering of brain volumes and biomarkers

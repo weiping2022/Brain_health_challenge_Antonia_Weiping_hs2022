@@ -1,0 +1,44 @@
+Notebooks: 
+    A: data preprocessing and data wrangling
+        	- 1_datawrangling_final.ipynb      
+    B: exploratory analysis 
+		- 2a_exploratory_analysis.py   
+		- 2b_exploratory_analysis.ipynb
+    C: modeling using sleep attributes to predict diagnosis changes (from previous visit to the current visit)
+        	- 3_model_sleep_vs_DX_conversion_final.ipynb       
+     	based on the four most important sleep-features selected in notebook_3, visualizing the distribution of sleep features on age, education, and gender
+        	- 3a_visualization_sleep_vs_age_gender_edu.ipynb     
+    D: similar to the notebook_3, modeling using relative brain volumes to predict diagnosis changes (from previous visit to the current visit)
+        	- 4_model_relatv_brain_volume_vs_DX_conversion_final.ipynb        
+    E: Machine Learning using sleep and brainvolume (as well as some other models not used for the paper)
+		- 5_ML_Sleep_and_brainvolume.py 
+    F: visualization and statistics analysis
+        	- 6_Visualisations_and_Statistics.py
+    G: folder 'playground' includes many different visualization and modeling tries which are not included in the final work:
+		- brain volumes and biomarkers --> insomnia (classification algorithms)
+		- brain volumes and biomarkers --> ventricles (linear regression)
+		- KMeans clustering of brain volumes and biomarkers
+		- use brain volume reduction per year --> AD conversion
+		- use the changes from baseline diagnosis to the current diagnosis as target
+		- use the changes from baseline diagnosis to the last diagnosis as target
+       
+Dashboards:
+    1: dashboard_one.py
+        include four functions used in data preprocessing and wrangling
+        	- key_in_str(key_list,str)
+        	- new_col_with_key(df,key_list,new_col)
+        	- drop_char(df,col)
+        	- char_float_na(df,col)
+    2: dashboard_two.py
+        include five functions for data preparation and data modeling using undersampling
+        	- usampling_split_scale_data(): is not used in final notebooks
+        	- models(): is not used in final notebooks
+        	- usampling_scale_data(): mainly used in notebook 2 and notebook 4
+        	- cv_models(): mainly used in notebook 2 and notebook 4
+        	- feature_importance(): mainly used in notebook 2 and notebook 4
+        
+    3. dashboard_three.py
+        include two functions for data preparation and data modeling using oversampling
+        	- oversampling_split_scale_data(df,drop_lst,target)
+        	- models_os(df,drop_lst,target)
+            The two function are not used in the final notebooks.
